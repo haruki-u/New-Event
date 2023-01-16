@@ -8,16 +8,17 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
     <body class="antialiased">
-        <h1>サークルリスト</h1>
-        <a href="/post/create">create</a>
-        <div class='posts'>
-            @foreach($posts as $post)
-            <div class='post'>
-                <a href="/posts/{{$post->id}}"><h2 class='title'>{{$post->title}}</h2></a>
+        <h1 class='title'>
+            {{$post->title}}
+        </h1>
+        <div class='contents'>
+            <div class='contents'>
+                <h3>本文</h3>
                 <p class='body'>{{$post->body}}</p>
             </div>
-            @endforeach
+            <div class='footer'>
+                <a href="/">戻る</a>
+            </div>
         </div>
-        <div class='paginate'>{{$posts->links()}}</div>
     </body>
 </html>
