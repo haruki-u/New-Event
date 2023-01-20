@@ -9,7 +9,7 @@
     </head>
     <body class="antialiased">
         <h1>サークルリスト</h1>
-        <a href="/post/create">create</a>
+        <a href="/posts/create">create</a>
         <div class='posts'>
             @foreach($posts as $post)
             <div class='post'>
@@ -18,6 +18,8 @@
             </div>
             @endforeach
         </div>
-        <div class='paginate'>{{$posts->links()}}</div>
+        <div class='paginate'>
+            <p>{{$posts->links()}}</p>
+        </div>
     </body>
 </html>
