@@ -15,6 +15,17 @@
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
+        
+        <!-- Role -->
+        <div class='mt-4'>
+            <x-input-label for="role" :value="__('Role')" />
+            <select id="role" name="role" required />
+                <option value="">選択してください</option>
+                <option value="administrator" >サークル</option>
+                <option value="student" >学生</option>
+            </select>
+            <x-input-error :messages="$errors->get('role')" class="mt-2" />
+        </div>
 
         <!-- Password -->
         <div class="mt-4">

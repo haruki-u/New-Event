@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\CircleController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,6 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -31,10 +29,15 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/',[PostController::class,'index']);
-Route::get('/posts/create',[PostController::class,'create']);
-Route::get('/posts/{post}',[PostController::class,'show']);
-Route::post('/posts',[PostController::class,'store']);
-Route::get('/posts/{post}/edit',[PostController::class,'edit']);
-Route::put('/posts/{post}',[PostController::class,'update']);
-Route::delete('/posts/{post}',[PostController::class,'delete']);
+Route::get('/',[CircleController::class,'index']);
+Route::get('/circles/create',[CircleController::class,'create']);
+Route::get('/circles/{circle}',[CircleController::class,'show']);
+Route::post('/circles',[CircleController::class,'store']);
+Route::get('/circles/{circle}/edit',[CircleController::class,'edit']);
+Route::put('circles/{circle}',[CircleController::class,'update']);
+Route::delete('/circles/{circle}',[CircleController::class,'delete']);
+
+Route::get('/students/index',[StudentController::class,'index']);
+Route::get('/students/create',[StudentController::class,'create']);
+Route::post('/students',[StudentController::class,'store']);
+

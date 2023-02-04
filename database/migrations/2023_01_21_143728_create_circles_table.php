@@ -13,8 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->string('user_id')->nullable(true)->change();
+        Schema::create('circles', function (Blueprint $table) {
+            $table->id();
+            $table->string('user_id');
+            $table->string('name');
+            $table->string('qrcord_image');
+            $table->string('contents');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -25,8 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->string('user_id')->nullable(false)->change();
-        });
+        Schema::dropIfExists('circles');
     }
 };
