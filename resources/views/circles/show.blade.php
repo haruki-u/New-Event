@@ -19,7 +19,7 @@
             </div>
             <div class='qrcord_image'>
                 <h3>QRコード</h3>
-                <img src="{{Storage::url($circle->qrcord_image)}}" width="25%">
+                <img src="{{ $circle->qrcord_image }}" alt="画像が読み込めません。"/>
             </div>
             <div class='edit'>
                 <a href="/circles/{{$circle->id}}/edit">edit</a>

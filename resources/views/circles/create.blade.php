@@ -9,7 +9,7 @@
     </head>
     <body class="antialiased">
         <h1>サークルリスト</h1>
-        <form action="/circles" method="POST">
+        <form action="/circles" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="user_id">
                 <h2>User_id</h2>
@@ -21,11 +21,9 @@
             </div>
             <div class="qrcord_image">
                 <h2>QRコード</h2>
-                <form action="/circles/create" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="file" name="qrcord_image">
+                    <input type="file" name="image">
                     <input type="submit" value="アップロード">
-                </form>
             </div>
             <div class="contents">
                 <h2>内容</h2>

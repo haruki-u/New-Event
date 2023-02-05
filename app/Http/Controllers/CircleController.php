@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Circle;
+use Cloudinary;
 
 class CircleController extends Controller
 {
@@ -25,6 +26,8 @@ class CircleController extends Controller
     public function store(Circle $circle,Request $request)
     {
         $input=$request['circle'];
+        $qrcord_image=Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $input+=['qrcord_image'=>$qrcord_image];
         // $input['user_id'] = auth()->id();
         $circle->fill($input)->save();
         return redirect('/circles/'. $circle->id);
