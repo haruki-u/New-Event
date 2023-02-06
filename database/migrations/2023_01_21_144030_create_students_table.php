@@ -13,19 +13,26 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('circles', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id',50);
-            $table->string('name',50);
-            $table->string('qrcord_image')->nullable();
-            $table->string('contens');
+            $table->string('user_id');
+            $table->string('name');
+            $table->string('grade');
+            $table->string('sex');
+            $table->string('faculty');
+            $table->string('department');
             $table->timestamps();
             $table->softDeletes();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('circles');
+        Schema::dropIfExists('students');
     }
 };
