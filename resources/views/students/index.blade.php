@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<x-app-layout>
+    <x-slot name="header">
+        学生情報
+    </x-slot>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -9,7 +13,6 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
     <body class="antialiased">
-        <h1>学生情報</h1>
         <div class='students'>
             @foreach($students as $student)
             <div class='student'>
@@ -39,3 +42,4 @@
         </script>
     </body>
 </html>
+</x-app-layout>

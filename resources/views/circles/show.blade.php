@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<x-app-layout>
+    <x-slot name="header">
+        新歓
+    </x-slot>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -15,11 +19,10 @@
         <div class='contents'>
             <div class='contents'>
                 <h3>活動内容</h3>
-                <p class='contents'>{{$circle->contents}}</p>
             </div>
             <div class='qrcord_image'>
                 <h3>QRコード</h3>
-                <img src="{{ $circle->qrcord_image }}" alt="画像が読み込めません。"/>
+                <img src="{{ $circle->qrcord_image }}" alt="画像が読み込めません。" width="200" height="200"/>
             </div>
             <div class='edit'>
                 <a href="/circles/{{$circle->id}}/edit">edit</a>
@@ -30,3 +33,4 @@
         </div>
     </body>
 </html>
+</x-app-layout>

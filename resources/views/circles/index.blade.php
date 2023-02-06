@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<x-app-layout>
+    <x-slot name="header">
+        サークル一覧
+    </x-slot>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -9,7 +13,6 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
     <body class="antialiased">
-        <h1>サークルリスト</h1>
         @can('isAdmin')
         <a href="/circles/create">[create]</a>
         @endcan
@@ -48,3 +51,4 @@
         </script>
     </body>
 </html>
+</x-app-layout>

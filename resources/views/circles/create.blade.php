@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<x-app-layout>
+    <x-slot name="header">
+        投稿フォーム
+    </x-slot>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -8,7 +12,6 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
     <body class="antialiased">
-        <h1>サークルリスト</h1>
         <form action="/circles" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="user_id">
@@ -37,3 +40,4 @@
         </div>
     </body>
 </html>
+</x-app-layout>

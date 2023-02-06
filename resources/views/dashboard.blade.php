@@ -14,4 +14,7 @@
             </div>
         </div>
     </div>
+    <body class="antialiased">
+        <a href="/">click</a>
+    </body>
 </x-app-layout>

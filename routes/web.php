@@ -29,8 +29,8 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/',[CircleController::class,'index']);
-Route::get('/circles/create',[CircleController::class,'create']);
+Route::get('/',[CircleController::class,'index'])->name('index');
+Route::get('/circles/create',[CircleController::class,'create'])->name('create');
 Route::get('/circles/{circle}',[CircleController::class,'show']);
 Route::post('/circles',[CircleController::class,'store']);
 Route::get('/circles/{circle}/edit',[CircleController::class,'edit']);
